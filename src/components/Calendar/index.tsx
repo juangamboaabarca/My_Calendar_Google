@@ -1,7 +1,7 @@
 import { api } from '@/src/lib/axios'
 import { getWeekDays } from '@/src/utils/get-week-days'
-import { useQuery } from '@tanstack/react-query'
-import dayjs from 'dayjs'
+import { useQuery } from '@tanstack/react-query'   // https://tanstack.com/query/latest  
+import dayjs from 'dayjs' // https://day.js.org/docs/en/installation/installation
 import { useRouter } from 'next/router'
 import { CaretLeft, CaretRight } from 'phosphor-react'
 import { useMemo, useState } from 'react'
@@ -72,7 +72,7 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
           month: String(currentDate.get('month') + 1).padStart(2, '0'),
         },
       })
-
+      console.log(response.data)
       return response.data
     },
   )
@@ -156,10 +156,10 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
         </CalendarTitle>
 
         <CalendarActions>
-          <button onClick={handlePreviousMonth} title="Previous month">
+          <button onClick={handlePreviousMonth} title="Mes anterior">
             <CaretLeft />
           </button>
-          <button onClick={handleNextMonth} title="Next month">
+          <button onClick={handleNextMonth} title="Mes Siguiente">
             <CaretRight />
           </button>
         </CalendarActions>

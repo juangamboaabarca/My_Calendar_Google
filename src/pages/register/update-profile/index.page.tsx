@@ -10,7 +10,7 @@ import {
 } from '@ignite-ui/react'
 import { GetServerSideProps } from 'next'
 import { getServerSession } from 'next-auth'
-import { useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react' //https://next-auth.js.org/  //https://next-auth-example.vercel.app/server-example
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import { ArrowRight } from 'phosphor-react'
@@ -73,7 +73,7 @@ export default function UpdateProfile() {
             <Text size="sm">Acerca de usted</Text>
             <TextArea {...register('bio')} />
             <FormAnnotation size="sm">
-              Hable un poco acerda de usted. Esto será mostrado en su página principal!
+              Hable un poco acerca de usted. Esto será mostrado en su página principal!
             </FormAnnotation>
           </label>
 

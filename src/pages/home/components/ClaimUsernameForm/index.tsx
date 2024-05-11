@@ -33,7 +33,7 @@ export function ClaimUsernameForm() {
   async function handleClaimUsername(data: ClaimUsernameFormData) {
     const { username } = data
 
-    await router.push(`/register?username=${username}`)
+    await router.push(`/register?username=${username}`)  // p ej. http://localhost:3000/register/?username=Luis
   }
 
   return (
@@ -43,7 +43,8 @@ export function ClaimUsernameForm() {
           size="sm"
           prefix="ignite.com/"
           placeholder="username"
-          {...register('username')}
+          {...register('username')}  // https://oprearocks.medium.com/what-do-the-three-dots-mean-in-javascript-bc5749439c9a 
+                                     //para el caso actual, concatena el nombre de usuario incluido en register
         />
         <Button size="sm" type="submit" disabled={isSubmitting}>
           Registrar
